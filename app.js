@@ -7,14 +7,8 @@ app.use(morgan("dev"));
 const mongoose = require("mongoose");
 const conn = require("./connection");
 const employeeRouter = require("./Router");
-const {
-  employeeEntry,
-  getOneEmployee,
-  updateEmployee,
-  deleteEmployee,
-  getEmployees
-} = require("./Controller");
-// 🔥  Middleware.... 🔥
+
+// 🔥  Middleware....🔥
 app.use((req, res, next) => {
   req.requestTime = new Date();
   next();
